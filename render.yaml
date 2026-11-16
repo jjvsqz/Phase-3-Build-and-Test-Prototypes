@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: cravd-p3-prototype
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SURVEY_URL
+        sync: false
